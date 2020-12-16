@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title> Covid-19 prediction</title>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+  </head>
+   
+  <div class="header">
+    <h1 class="logo">Covid-19</h1>
+  </div>
+<style>
+*{                        /* selects all elements */
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat",sans-serif;
+}
+    .header{
+  height: 100px;
+  background: #34495e; /* Background color of header */
+  padding: 0 100px;  /* for equal space between the header i.e. top and bottom padding is 0px right and left padding is 20px */
+  color: #fff;  /* for logo color*/
+}
+.logo{
+  line-height: 100px; 
+  float: left;
+  text-transform: uppercase;
+}
+body{
+	font-family: arial;
+}
+
+ input{
+ 	width: 45%;
+ 	box-sizing: border-box;
+ 	padding: 12px 5px;
+ 	border-radius: 5px;
+ 	margin: 5px;
+ 	font-weight: bold;
+ }
+ 
+</style>
+<div class = "login">
+    
+ <form action="{{ url_for('predict')}}"method="post"> 
+ <hr> 
+     <br>
+     <br>
+  <label  for="gender"><b style="font-size:22px;">Gender :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+  <input type="text" name="gender"placeholder="enter '0' for Male , '1' for Female and '2' for Trans-Gender" required="required"><br><br>
+  
+  <label for="age"><b style="font-size:22px;">Age :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+  <input type="text" name="age"placeholder="Enter Your Age" required="required"><br><br>
+  
+  <label for="fever"><b style="font-size:22px;">Fever :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+  <input type="text" name="fever" placeholder="enter '1' for Yes and '0' for No" required="required"><br><br>
+  
+  <label for="dry"><b style="font-size:22px;">Dry cough :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+  <input type="text" name="dry" placeholder="enter '1' for Yes and '0' for No" required="required"><br><br>
+  
+    <label for="beathing"><b style="font-size:22px;">Difficulty in breating :&nbsp;&nbsp;</b></label>
+  <input type="text" name="difficulty in beathing" placeholder="enter '1' for Yes and '0' for No" required="required"><br><br>
+  
+    <label for="tiredness"><b style="font-size:22px;">Tiredness :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+  <input type="text" name="tiredness" placeholder="enter '1' for Yes and '0' for No"  required="required"><br>  <br>
+  
+  <label for="soar"><b style="font-size:22px;">Soar Throat :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+  <input type="text" name="soar_throat" placeholder="enter '1' for Yes and '0' for No" required="required"><br><br>
+  
+  <label for="nasal"><b style="font-size:22px;">Nasal Congestion :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+  <input type="text" name="nasal_cogestion" placeholder="enter '1' for Yes and '0' for No" required="required"><br><br>
+  
+  <label for="symptoms"><b style="font-size:22px;">Different Symptoms :&nbsp;</b></label>
+  <input type="text" name="diff_symptoms" placeholder="enter '1' for Yes and '0' for No" required="required"><br>
+  
+  <br>
+     <button type="submit" class ="btn" style="background-color:#34495e; color:#FFFFFF; width: 20%; box-sizing: border-box;
+ 	padding: 12px 5px;
+ 	border-radius: 5px;
+ 	margin: 5px;
+ 	font-weight: bold;"> Predict</button>
+</form> 
+      <br>
+    <br>
+    <h2> {{prediction_text}} </h2>
+      </div>
+    <br>
+    <br>
+    <hr>
+    <br>
+ <p><i><b>Copyright &copy; : Team Elite </b></i></p>
+          <br>
+    
+</html>
